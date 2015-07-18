@@ -1,1 +1,8 @@
-Hello world
+%ul
+  - @books.each do |book|
+    %li
+      = book.title
+      = book.author.name
+      = book.author.country
+    %br
+
