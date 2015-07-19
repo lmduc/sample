@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def html_request?
-    request.html?
+    request.format.html?
   end
 end
