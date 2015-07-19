@@ -1,0 +1,16 @@
+angular.module('books', ['ngRoute', 'resources.books'])
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider
+      .when('/books', {
+        templateUrl: '<%= asset_path("desktop/books/partials/index.html") %>',
+        controller: 'IndexBookController',
+        resolve: {
+          books: ['Book', function(Book) {
+            return Book.getAll();
+          }]
+        }
+      })
+  }])
+  .controller('IndexBookController', ['$rootScope', '$scope', '$routeParams', 'Book', 'books', function($rootScope, $scope, $routeParams, Book, books) {
+    $scope.books = books.data;
+  }])

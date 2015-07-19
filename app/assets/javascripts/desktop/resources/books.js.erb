@@ -1,0 +1,10 @@
+angular.module('resources.books', [])
+  .factory('Book', ['$http', function($http) {
+    var baseUrl = '/books';
+
+    return {
+      getAll: function() {
+        return $http.get(baseUrl + '.json');
+      }
+    };
+  }]);

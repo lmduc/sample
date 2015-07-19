@@ -1,0 +1,16 @@
+<div id="books_index" class="container-fluid">
+  <div class="row">
+    <div class="col-xs-5 col-md-3">
+      <form role="form" class="form">
+        <div class="form-group">
+          <input type="text" id="search_text" class="form-control" placeholder="Search" ng-model="searchText"></input>
+        </div>
+      </form>
+      <ul id="book_list">
+        <li class="pointer" ng-repeat="book in books | filter:searchText">
+          <div><strong>Title:</strong> <em>{{book.title}}</em></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
