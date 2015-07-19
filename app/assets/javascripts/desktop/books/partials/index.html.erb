@@ -8,9 +8,24 @@
       </form>
       <ul id="book_list">
         <li class="pointer" ng-repeat="book in books | filter:searchText">
-          <div><strong>Title:</strong> <em>{{book.title}}</em></div>
+          <div>
+            <strong>{{book.id == currentBook.id ? "*" : ""}}Title:</strong>
+            <a ng-click="showBook(book.id)" href="#">{{book.title}}</a>
+          </div>
         </li>
       </ul>
+    </div>
+
+    <div class="col-xs-9 col-md-9">
+      <div>
+        <strong>Title:</strong>{{currentBook.title}}
+      </div>
+      <div>
+        <strong>Author:</strong>{{currentBook.author.name}}
+      </div>
+      <div>
+        <strong>Country:</strong>{{currentBook.author.country}}
+      </div>
     </div>
   </div>
 </div>

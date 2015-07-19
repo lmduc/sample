@@ -5,6 +5,9 @@ angular.module('resources.books', [])
     return {
       getAll: function() {
         return $http.get(baseUrl + '.json');
+      },
+      get: function(id) {
+        return $http.get(baseUrl + '/' + id + '.json');
       }
     };
   }]);

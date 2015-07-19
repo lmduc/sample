@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :homes, only: [:index]
 
-  resources :books, only: [:index]
+  resources :books, only: [:index, :show]
 end

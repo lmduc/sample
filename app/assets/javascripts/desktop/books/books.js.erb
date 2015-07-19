@@ -12,5 +12,11 @@ angular.module('books', ['ngRoute', 'resources.books'])
       })
   }])
   .controller('IndexBookController', ['$rootScope', '$scope', '$routeParams', 'Book', 'books', function($rootScope, $scope, $routeParams, Book, books) {
-    $scope.books = books.data;
+    $scope.books = books.data.books;
+
+    $scope.showBook = function(id) {
+      Book.get(id).then(function(resp) {
+        $scope.currentBook = resp.data.book;
+      })
+    }
   }])
