@@ -23,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # pass variables from server to clients
 gem 'client_variable'
 
+# serialize data
+gem 'active_model_serializers'
+
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -33,4 +36,3 @@ group :development, :test do
   # Debugger
   gem 'byebug'
 end
-
